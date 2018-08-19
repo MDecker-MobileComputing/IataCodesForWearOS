@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.wear.widget.BoxInsetLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_grey"
+    android:padding="@dimen/box_inset_layout_padding"
+    tools:context=".MainActivity"
+    tools:deviceIds="wear">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:boxedEdges="all">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <fragment
+                android:name="de.mide.wear.iata_codes.FlughafencodeFragment"
+                android:id="@+id/fragment_flughafencode"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:layout="@layout/fragment_flughafencode"
+                android:layout_marginBottom="10dp" />
+
+            <fragment
+                android:name="de.mide.wear.iata_codes.FlugliniencodeFragment"
+                android:id="@+id/fragment_flugliniencode"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</android.support.wear.widget.BoxInsetLayout>
