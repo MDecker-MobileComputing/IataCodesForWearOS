@@ -1,5 +1,6 @@
 package de.mide.wear.iata_codes;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -25,5 +26,17 @@ public class FlughafencodeFragment extends Fragment {
 
         return inflater.inflate( R.layout.fragment_flughafencode, container, false );
         // attachToRoot=false
+    }
+
+
+    /**
+     * Hintergrundfarbe von Fragment kann nicht über Attribut geändert werden.
+     * siehe auch: https://stackoverflow.com/a/15941465/1364368
+     */
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        getView().setBackgroundColor(Color.RED);
     }
 }
