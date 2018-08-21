@@ -20,21 +20,71 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <fragment
-                android:name="de.mide.wear.iata_codes.FlughafencodeFragment"
-                android:id="@+id/fragment_flughafencode"
-                android:layout_weight="1"
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:layout="@layout/fragment_flughafencode"
-                android:layout_marginBottom="10dp" />
+                android:paddingBottom="10dp">
+                <!--
+                     CardView ist Unterklasse von Framelayout, kann also
+                     nur ein direktes Kind-Element enthalten.
+                 -->
+                <LinearLayout
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="IATA-Code für Flughafen"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                    <EditText
+                        android:id="@+id/codeFlughafenEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLength="3"
+                        android:hint="Drei Zeichen" />
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Suche Flughafen" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
 
-            <fragment
-                android:name="de.mide.wear.iata_codes.FlugliniencodeFragment"
-                android:id="@+id/fragment_flugliniencode"
-                android:layout_weight="1"
+            <Space
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="10dp"/>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="IATA-Code für Flugline"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="10dp" />
+                    <EditText
+                        android:id="@+id/codeFluglinienEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLength="2"
+                        android:hint="Zwei Zeichen" />
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Suche Fluglinie" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
 
         </LinearLayout>
 
