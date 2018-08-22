@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.support.v7.app.AlertDialog;
+
 
 /**
  * Fragment für Suche nach IATA-Flughafencode (z.B. "FRA" für "Frankfurt a.M.).
@@ -25,6 +27,7 @@ public class FlughafencodeFragment
 
     /** Referenz auf Text-Eingabefeld für IATA-Flughafen-Code. */
     protected EditText _codeEditText = null;
+
 
     /**
      * Layout-Datei für Fragment mit Inflater laden und View daraus erzeugen.
@@ -89,6 +92,8 @@ public class FlughafencodeFragment
                                 "Flughafen:\n" + flughafen,
                                 Toast.LENGTH_LONG);
                 toast.show();
+
+
             }
         }
         catch (Exception ex) {
