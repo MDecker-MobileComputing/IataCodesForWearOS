@@ -18,25 +18,24 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="#FF0000" >
 
             <fragment
                 android:name="de.mide.wear.iata_codes.FlughafencodeFragment"
                 android:id="@+id/fragment_flughafencode"
-                android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:layout="@layout/fragment_flughafencode"
-                android:layout_marginBottom="10dp" />
+                tools:layout="@layout/fragment_flughafencode" />
 
+            <!-- "Trennbalken -->
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="10dp" />
+                android:layout_height="5dp" />
 
             <fragment
                 android:name="de.mide.wear.iata_codes.FlugliniencodeFragment"
                 android:id="@+id/fragment_flugliniencode"
-                android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 

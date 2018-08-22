@@ -4,7 +4,7 @@ package de.mide.wear.iata_codes;
  * Klasse simuliert eine Datenbank zur Abfrage von IATA-Flughafen- und Fluglinien-
  * Codes (IATA: International Air Transport Association).<br>
  *
- * <b>ACHTUNG:</b> Diese Klasse kennt nur eine sehr kleine Teilmenge der IATA-Codes
+ * <b>ACHTUNG:</b> Diese Klasse kennt nur eine sehr kleine Teilmenge der IATA-Codes.
  * <br><br>
  *
  * This project is licensed under the terms of the BSD 3-Clause License.
@@ -22,16 +22,30 @@ public class IataCodesDatenbank {
      * </ul>
      *
      * @param code IATA-Flughafen-Code, z.B. "FRA" für "Frankfurt a.M.";
-     *             besteht aus genau drei Zeichen (Buchstaben + Ziffern).
+     *             besteht aus genau drei Zeichen (Buchstaben + Ziffern);
+     *             wird vor Vergleich um Leerzeichen am Anfang und Ende
+     *             bereinigt.
      *
-     * @return Name des Flughafens, z.B. "Frankfurt a.M., Deutschland".
+     * @return Name des Flughafens, z.B. "Frankfurt a.M., Deutschland";
+     *         leerer String, wenn Code nicht gefunden wurde.
+     *
+     * @throws Exception Wenn <i>code</i> nicht genau drei Zeichen hat.
      */
-    public static String getFlughafenCode(String code) {
+    public static String getFlughafenCode(String code) throws Exception {
 
-        switch (code) {
-            case "FRA": return "Frankfurt a.M., Deutschland";
-            case "STR": return "Stuttgart, Deutschland";
-            default: return "Unbekannter IATA-Airport-Code \"" + code + "\"";
+        String codeTrimmed = code.trim();
+
+        if (codeTrimmed.length() != 3) {
+            throw new Exception("Flughafen-Code hat nicht genau drei Zeichen.");
+        }
+
+        switch (codeTrimmed) {
+            case "FKB": return "Karlsruhe/Baden-Baden, Germany";
+            case "FRA": return "Frankfurt a.M., Germany";
+            case "LHR": return "London Heathrow, U.K.";
+            case "LIS": return "Lissabon, Portugal";
+            case "STR": return "Stuttgart, Germany";
+            default: return "";
         }
     }
 
@@ -47,16 +61,30 @@ public class IataCodesDatenbank {
      * </ul>
      *
      * @param code IATA-Flughafen-Code, z.B. "LH" oder "AA";
-     *             besteht aus genau zwei Zeichen (Buchstaben + Ziffern).
+     *             besteht aus genau zwei Zeichen (Buchstaben + Ziffern);
+     *             wird vor Vergleich um Leerzeichen am Anfang und Ende
+     *             bereinigt.
      *
-     * @return Name der Fluglinie, z.B. "Lufthansa".
+     * @return Name der Fluglinie, z.B. "Lufthansa";
+     *         leerer String, wenn Code nicht gefunden wurde.
+     *
+     * @throws Exception Wenn <i>code</i> nicht genau zwei Zeichen hat.
      */
-    public static String getAirlineCode(String code) {
+    public static String getAirlineCode(String code) throws Exception {
 
-        switch (code) {
-            case "LH": return "Lufthansa";
-            case "AA": return "American Airlines";
-            default: return "Unbekannter IATA-Airline-Code \"" + code + "\"";
+        String codeTrimmed = code.trim();
+
+        if (codeTrimmed.length() != 2) {
+            throw new Exception("Fluglinien-Code hat nicht genau drei Zeichen.");
+        }
+
+        switch (codeTrimmed) {
+            case "AA": return "American Airlines (USA)";
+            case "BA": return "British Airways (UK)";
+            case "LH": return "Lufthansa (Germany)";
+            case "LO": return "LOT (Polish Airlines)";
+            case "SK": return "SAS Scandinavian Airlines (Sweden)";
+            default: return "";
         }
     }
 
