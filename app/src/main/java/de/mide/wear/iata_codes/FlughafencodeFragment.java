@@ -14,7 +14,7 @@ import android.widget.EditText;
 
 
 /**
- * Fragment für Suche nach IATA-Flughafencode (z.B. "FRA" für "Frankfurt a.M.).
+ * Fragment für Suche nach IATA-Flughafencode (z.B. "FRA" für "Frankfurt a.M.").
  * Code besteht immer aus drei Zeichen (Buchstaben und Ziffern).
  * <br><br>
  *
@@ -53,7 +53,7 @@ public class FlughafencodeFragment extends Fragment
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        // Hintergrundfarbe von Fragment kann nicht über Attribut geändert werden.
+        // Hintergrundfarbe von Fragment kann nicht über Attribut geändert werden,
         // siehe auch: https://stackoverflow.com/a/15941465/1364368
         getView().setBackgroundColor(Color.DKGRAY); // dark gray
 

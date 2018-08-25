@@ -21,7 +21,7 @@ public class ResultActivity extends WearableActivity {
     /**
      * Lifecycle-Methode.
      * Nach Laden der Layout-Datei wird der als Extra übergebene Text
-     * ausgelesen und und TextView-Element angezeigt.
+     * ausgelesen und im TextView-Element angezeigt.
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,9 +40,7 @@ public class ResultActivity extends WearableActivity {
         TextView textView = findViewById(R.id.resultTextView);
         textView.setText(textZumAnzeigen);
 
-
-        // Enables Always-on
-        setAmbientEnabled();
+        setAmbientEnabled(); // Enables Always-on
     }
 
 }
