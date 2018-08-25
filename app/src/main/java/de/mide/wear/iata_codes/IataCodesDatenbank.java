@@ -73,12 +73,12 @@ public class IataCodesDatenbank {
      *
      * @throws Exception Wenn <i>code</i> nicht genau zwei Zeichen hat.
      */
-    public static String getAirlineCode(String code) throws Exception {
+    public static String getFluglinienCode(String code) throws Exception {
 
         String codeTrimmed = code.trim().toUpperCase();
 
         if (codeTrimmed.length() != 2) {
-            throw new Exception("Fluglinien-Code hat nicht genau drei Zeichen.");
+            throw new Exception("Fluglinien-Code hat nicht genau zwei Zeichen.");
         }
 
         switch (codeTrimmed) {

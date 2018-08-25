@@ -1,5 +1,6 @@
 package de.mide.wear.iata_codes;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -10,8 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
-import android.support.v7.app.AlertDialog;
 
 
 /**
@@ -21,9 +20,8 @@ import android.support.v7.app.AlertDialog;
  *
  * This project is licensed under the terms of the BSD 3-Clause License.
  */
-public class FlughafencodeFragment
-        extends Fragment
-        implements View.OnClickListener {
+public class FlughafencodeFragment extends Fragment
+                                   implements View.OnClickListener {
 
     /** Referenz auf Text-Eingabefeld für IATA-Flughafen-Code. */
     protected EditText _codeEditText = null;
@@ -67,42 +65,40 @@ public class FlughafencodeFragment
 
 
     /**
-     * Event-Handler für Button, führt Suche nach Flughafen-Code aus.
+     * Event-Handler für Button, führt Suche nach Flughafen-Code aus;
+     * Ergebnis oder Fehler wird auf {@link ResultActivity} dargestellt.
      *
      * @param view Button, der das Event ausgelöst hat.
      */
     @Override
     public void onClick(View view) {
 
+        Intent intent = new Intent(view.getContext(), ResultActivity.class);
+        String text = "";
+
         try {
             String code = _codeEditText.getText().toString().trim();
 
             String flughafen = IataCodesDatenbank.getFlughafenCode(code);
+
             if (flughafen.length() == 0) {
-                Toast toast =
-                        Toast.makeText(view.getContext(),
-                                "Kein Flughafen mit Code \"" + code + "\" gefunden.",
-                                Toast.LENGTH_LONG);
-                toast.show();
+
+                text = "Kein Flughafen mit Code \"" + code.toUpperCase() + "\" gefunden.";
+                intent.putExtra(ResultActivity.EXTRA_KEY_ERGEBNIS_TEXT, text);
 
             } else {
 
-                Toast toast =
-                        Toast.makeText(view.getContext(),
-                                "Flughafen:\n" + flughafen,
-                                Toast.LENGTH_LONG);
-                toast.show();
-
-
+                text = "Flughafen mit Code \"" + code.toUpperCase() + "\":\n\n" + flughafen;
+                intent.putExtra(ResultActivity.EXTRA_KEY_ERGEBNIS_TEXT, text);
             }
         }
         catch (Exception ex) {
-            Toast toast =
-                    Toast.makeText(view.getContext(),
-                                   "Code ist zu kurz\n(weniger als drei Zeichen)",
-                                   Toast.LENGTH_LONG);
-            toast.show();
+
+            text = "Code zu kurz\n(weniger als drei Zeichen)";
+            intent.putExtra(ResultActivity.EXTRA_KEY_ERGEBNIS_TEXT, text);
         }
+
+        startActivity(intent);
     }
 
 }
