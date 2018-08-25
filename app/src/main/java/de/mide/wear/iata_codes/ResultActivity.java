@@ -7,7 +7,8 @@ import android.widget.TextView;
 
 
 /**
- * Activity zur Darstellung von Ergebnis.
+ * Activity zur Darstellung von Ergebnis; diese Activity wird von den
+ * beiden Fragmenten aufgerufen.
  * <br><br>
  *
  * This project is licensed under the terms of the BSD 3-Clause License.

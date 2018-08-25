@@ -1,11 +1,7 @@
 package de.mide.wear.iata_codes;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
-import android.support.wear.widget.WearableRecyclerView;
 import android.support.wearable.activity.WearableActivity;
-import android.view.ViewGroup;
 
 
 /**
