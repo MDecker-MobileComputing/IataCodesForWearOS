@@ -53,10 +53,6 @@ public class FlughafencodeFragment extends Fragment
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        // Hintergrundfarbe von Fragment kann nicht über Attribut geändert werden,
-        // siehe auch: https://stackoverflow.com/a/15941465/1364368
-        getView().setBackgroundColor(Color.DKGRAY); // dark gray
-
         Button button = view.findViewById(R.id.sucheFlughafenButton);
         button.setOnClickListener(this);
 
