@@ -80,20 +80,19 @@ public class FlughafencodeFragment extends Fragment
             if (flughafen.length() == 0) {
 
                 text = "Kein Flughafen mit Code \"" + code.toUpperCase() + "\" gefunden.";
-                intent.putExtra(ResultActivity.EXTRA_KEY_ERGEBNIS_TEXT, text);
 
             } else {
 
                 text = "Flughafen mit Code \"" + code.toUpperCase() + "\":\n\n" + flughafen;
-                intent.putExtra(ResultActivity.EXTRA_KEY_ERGEBNIS_TEXT, text);
+
             }
         }
         catch (Exception ex) {
 
             text = "Code zu kurz\n(weniger als drei Zeichen)";
-            intent.putExtra(ResultActivity.EXTRA_KEY_ERGEBNIS_TEXT, text);
         }
 
+        intent.putExtra(ResultActivity.EXTRA_KEY_ERGEBNIS_TEXT, text);
         startActivity(intent);
     }
 

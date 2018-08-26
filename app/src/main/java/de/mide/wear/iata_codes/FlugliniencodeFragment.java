@@ -79,20 +79,18 @@ public class FlugliniencodeFragment extends Fragment
             if (fluglinie.length() == 0) {
 
                 text = "Keine Fluglinie mit Code \"" + code.toUpperCase() + "\" gefunden.";
-                intent.putExtra(ResultActivity.EXTRA_KEY_ERGEBNIS_TEXT, text);
 
             } else {
 
                 text = "Fluglinie mit Code \"" + code.toUpperCase() + "\":\n\n" + fluglinie;
-                intent.putExtra(ResultActivity.EXTRA_KEY_ERGEBNIS_TEXT, text);
             }
         }
         catch (Exception ex) {
 
             text = "Code zu kurz\n(weniger als zwei Zeichen)";
-            intent.putExtra(ResultActivity.EXTRA_KEY_ERGEBNIS_TEXT, text);
         }
 
+        intent.putExtra(ResultActivity.EXTRA_KEY_ERGEBNIS_TEXT, text);
         startActivity(intent);
     }
 
