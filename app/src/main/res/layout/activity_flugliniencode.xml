@@ -7,28 +7,21 @@
     android:layout_height="match_parent"
     android:background="@color/dark_grey"
     android:padding="@dimen/box_inset_layout_padding"
-    tools:context=".MainActivity"
+    tools:context=".FlugliniencodeActivity"
     tools:deviceIds="wear">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:weightSum="2"
         app:boxedEdges="all">
 
-        <Button android:id="@+id/flughafenButton"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:text="Flughafen-Codes abfragen" />
-
-        <Button android:id="@+id/fluglinienButton"
+        <fragment
+            android:name="de.mide.wear.iata_codes.FlugliniencodeFragment"
+            android:id="@+id/fragment_flughafencode"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:text="Fluglinien-Codes abfragen" />
+            android:layout_height="wrap_content"
+            tools:layout="@layout/fragment_flughafencode" />
 
-    </LinearLayout>
+    </ScrollView>
 
 </android.support.wear.widget.BoxInsetLayout>

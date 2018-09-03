@@ -23,17 +23,19 @@
             android:name="com.google.android.wearable.standalone"
             android:value="true" />
 
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name">
+        <activity android:name=".MainActivity"
+                  android:label="@string/app_name">
             <intent-filter>
-                <action   android:name="android.intent.action.MAIN" />
+                <action   android:name="android.intent.action.MAIN"       />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".ResultActivity"
-                  android:label="Ergebnis" />
+        <activity android:name=".ResultActivity" />
+
+        <activity android:name=".FlughafencodeActivity" />
+
+        <activity android:name=".FlugliniencodeActivity" />
 
     </application>
 
