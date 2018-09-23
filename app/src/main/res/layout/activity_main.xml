@@ -17,13 +17,15 @@
         android:weightSum="2"
         app:boxedEdges="all">
 
-        <Button android:id="@+id/flughafenButton"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:text="Flughafen-Codes abfragen" />
+        <Button
+            android:id="@+id/flughafenButton"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="Flughafen-Codes abfragen" />
 
-        <Button android:id="@+id/fluglinienButton"
+        <Button
+            android:id="@+id/fluglinienButton"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
