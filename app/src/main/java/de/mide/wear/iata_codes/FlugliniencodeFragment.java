@@ -50,6 +50,7 @@ public class FlugliniencodeFragment extends Fragment
      */
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+
         super.onViewCreated(view, savedInstanceState);
 
         Button button = view.findViewById(R.id.sucheFluglinieButton);
