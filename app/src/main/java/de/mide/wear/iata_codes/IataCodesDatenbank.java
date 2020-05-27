@@ -37,10 +37,12 @@ public class IataCodesDatenbank {
         String codeTrimmed = code.trim().toUpperCase();
 
         if (codeTrimmed.length() != 3) {
+            
             throw new Exception("Flughafen-Code hat nicht genau drei Zeichen.");
         }
 
         switch (codeTrimmed) {
+                
             case "FKB": return "Karlsruhe/Baden-Baden, Germany";
             case "FRA": return "Frankfurt a.M., Germany";
             case "LHR": return "London Heathrow, U.K.";
@@ -78,10 +80,12 @@ public class IataCodesDatenbank {
         String codeTrimmed = code.trim().toUpperCase();
 
         if (codeTrimmed.length() != 2) {
+            
             throw new Exception("Fluglinien-Code hat nicht genau zwei Zeichen.");
         }
 
         switch (codeTrimmed) {
+                
             case "AA": return "American Airlines (USA)";
             case "BA": return "British Airways (UK)";
             case "LH": return "Lufthansa (Germany)";
